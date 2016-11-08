@@ -1,11 +1,9 @@
 package id.sch.smktelkom_mlg.learn.recyclerview1;
-
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,10 +19,14 @@ import org.w3c.dom.Text;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import id.sch.smktelkom_mlg.learn.recyclerview1.adapter.HotelAdapter;
+import id.sch.smktelkom_mlg.learn.recyclerview1.model.Hotel;
+
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Hotel>mList = new ArrayList<>();
     HotelAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -59,65 +61,6 @@ public class MainActivity extends AppCompatActivity {
         }
         mAdapter.notifyDataSetChanged();
     }
-    public class Hotel
-    {
-        public String judul;
-        public String deskripsi;
-        public Drawable foto;
-
-        public Hotel(String judul,String deskripsi,Drawable foto)
-        {
-            this.judul = judul;
-            this.deskripsi = deskripsi;
-            this.foto = foto;
-        }
-    }
-    public  class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>
-    {
-        ArrayList<Hotel> hotelList;
-
-        public HotelAdapter(ArrayList<Hotel>hotelList)
-        {
-            this.hotelList = hotelList;
-        }
-
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list,parent,false);
-            ViewHolder vh = new ViewHolder(v);
-            return vh;
-        }
-
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position)
-        {
-            Hotel hotel = hotelList.get(position);
-            holder.tvJudul.setText(hotel.judul);
-            holder.tvDeskripsi.setText(hotel.deskripsi);
-            holder.ivFoto.setImageDrawable(hotel.foto);
-        }
-
-        @Override
-        public int getItemCount()
-        {
-            if (hotelList!=null)
-                return hotelList.size();
-            return 0;
-        }
-
-        public class ViewHolder extends RecyclerView.ViewHolder
-        {
-            ImageView ivFoto;
-            TextView tvJudul;
-            TextView tvDeskripsi;
-            public ViewHolder(View itemView)
-            {
-                super(itemView);
-                ivFoto = (ImageView) itemView.findViewById(R.id.imageView);
-                tvJudul = (TextView) itemView.findViewById(R.id.textViewJudul);
-                tvDeskripsi = (TextView) itemView.findViewById(R.id.textViewDeskripsi);
-            }
-        }
-    }
-
 }
+
+
