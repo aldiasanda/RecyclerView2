@@ -1,29 +1,19 @@
-package id.sch.smktelkom_mlg.learn.recyclerview1;
+package id.sch.smktelkom_mlg.learn.recyclerview2;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import id.sch.smktelkom_mlg.learn.recyclerview1.adapter.HotelAdapter;
-import id.sch.smktelkom_mlg.learn.recyclerview1.model.Hotel;
+import id.sch.smktelkom_mlg.learn.recyclerview2.adapter.HotelAdapter;
+import id.sch.smktelkom_mlg.learn.recyclerview2.model.Hotel;
 
 public class MainActivity extends AppCompatActivity {
 
